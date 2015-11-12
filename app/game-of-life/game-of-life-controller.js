@@ -12,11 +12,12 @@ angular.module('MyApp')
     'use strict';
     $scope.gol = new SAMURAIPRINCIPLE.GameOfLife();
 
-    $scope.tick = function() {
-      $scope.gol.tick();
-    };
-
-    $scope.toggle = function(row, col) {
+    $scope.toggle = function(event) {
+      var row = Math.floor(event.offsetY / 20);
+      var col = Math.floor(event.offsetX / 20);
       $scope.gol.toggleCellState(row, col);
-    };
+      console.log(event.offsetY, event.offsetX);
+      console.log(row, col);
+      console.log(event);
+    }
   }]);

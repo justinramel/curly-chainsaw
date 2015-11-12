@@ -1,128 +1,15 @@
 <div>
-	<h1>Game of Life</h1>
-
-	<h2>Simple binding</h2>
-	<div>{{message}}</div>
-
-	<h2>ng-repeat</h2>
-	<div ng-repeat="m in messages">{{m.text}}</div>
-
-	<h2>ng-click</h2>
-	<button ng-click="addMore()">Click me!</button>
-
 	<h2>Game of life</h2>
 	<div>
-		<div class='grid'>
-			<div ng-click="toggle(1, 1)" class="cell" ng-class="{alive: gol.isCellAlive(1, 1)}" ng-style="{top: '0px', left: '0px'}"></div>
-			<div ng-click="toggle(1, 2)" class="cell" ng-class="{alive: gol.isCellAlive(1, 2)}" ng-style="{top: '0px', left: '20px'}"></div>
-			<div ng-click="toggle(1, 3)" class="cell" ng-class="{alive: gol.isCellAlive(1, 3)}" ng-style="{top: '0px', left: '40px'}"></div>
-			<div ng-click="toggle(1, 4)" class="cell" ng-class="{alive: gol.isCellAlive(1, 4)}" ng-style="{top: '0px', left: '60px'}"></div>
-			<div ng-click="toggle(1, 5)" class="cell" ng-class="{alive: gol.isCellAlive(1, 5)}" ng-style="{top: '0px', left: '80px'}"></div>
-			<div ng-click="toggle(1, 6)" class="cell" ng-class="{alive: gol.isCellAlive(1, 6)}" ng-style="{top: '0px', left: '100px'}"></div>
-			<div ng-click="toggle(1, 7)" class="cell" ng-class="{alive: gol.isCellAlive(1, 7)}" ng-style="{top: '0px', left: '120px'}"></div>
-			<div ng-click="toggle(1, 8)" class="cell" ng-class="{alive: gol.isCellAlive(1, 8)}" ng-style="{top: '0px', left: '140px'}"></div>
-			<div ng-click="toggle(1, 9)" class="cell" ng-class="{alive: gol.isCellAlive(1, 9)}" ng-style="{top: '0px', left: '160px'}"></div>
-			<div ng-click="toggle(1, 10)" class="cell" ng-class="{alive: gol.isCellAlice(1, 10)}" ng-style="{top: '0px', left: '180px'}"></div>
-
-			<div ng-click="toggle(2, 1)" class="cell" ng-class="{alive: gol.isCellAlive(2, 1)}" ng-style="{top: '20px', left: '0px'}"></div>
-			<div ng-click="toggle(2, 2)" class="cell" ng-class="{alive: gol.isCellAlive(2, 2)}" ng-style="{top: '20px', left: '20px'}"></div>
-			<div ng-click="toggle(2, 3)" class="cell" ng-class="{alive: gol.isCellAlive(2, 3)}" ng-style="{top: '20px', left: '40px'}"></div>
-			<div ng-click="toggle(2, 4)" class="cell" ng-class="{alive: gol.isCellAlive(2, 4)}" ng-style="{top: '20px', left: '60px'}"></div>
-			<div ng-click="toggle(2, 5)" class="cell" ng-class="{alive: gol.isCellAlive(2, 5)}" ng-style="{top: '20px', left: '80px'}"></div>
-			<div ng-click="toggle(2, 6)" class="cell" ng-class="{alive: gol.isCellAlive(2, 6)}" ng-style="{top: '20px', left: '100px'}"></div>
-			<div ng-click="toggle(2, 7)" class="cell" ng-class="{alive: gol.isCellAlive(2, 7)}" ng-style="{top: '20px', left: '120px'}"></div>
-			<div ng-click="toggle(2, 8)" class="cell" ng-class="{alive: gol.isCellAlive(2, 8)}" ng-style="{top: '20px', left: '140px'}"></div>
-			<div ng-click="toggle(2, 9)" class="cell" ng-class="{alive: gol.isCellAlive(2, 9)}" ng-style="{top: '20px', left: '160px'}"></div>
-			<div ng-click="toggle(2, 10)" class="cell" ng-class="{alive: gol.isCellAlive(2, 10)}" ng-style="{top: '20px', left: '180px'}"></div>
-
-			<div ng-click="toggle(3, 1)" class="cell" ng-class="{alive: gol.isCellAlive(3, 1)}" ng-style="{top: '40px', left: '0px'}"></div>
-			<div ng-click="toggle(3, 2)" class="cell" ng-class="{alive: gol.isCellAlive(3, 2)}" ng-style="{top: '40px', left: '20px'}"></div>
-			<div ng-click="toggle(3, 3)" class="cell" ng-class="{alive: gol.isCellAlive(3, 3)}" ng-style="{top: '40px', left: '40px'}"></div>
-			<div ng-click="toggle(3, 4)" class="cell" ng-class="{alive: gol.isCellAlive(3, 4)}" ng-style="{top: '40px', left: '60px'}"></div>
-			<div ng-click="toggle(3, 5)" class="cell" ng-class="{alive: gol.isCellAlive(3, 5)}" ng-style="{top: '40px', left: '80px'}"></div>
-			<div ng-click="toggle(3, 6)" class="cell" ng-class="{alive: gol.isCellAlive(3, 6)}" ng-style="{top: '40px', left: '100px'}"></div>
-			<div ng-click="toggle(3, 7)" class="cell" ng-class="{alive: gol.isCellAlive(3, 7)}" ng-style="{top: '40px', left: '120px'}"></div>
-			<div ng-click="toggle(3, 8)" class="cell" ng-class="{alive: gol.isCellAlive(3, 8)}" ng-style="{top: '40px', left: '140px'}"></div>
-			<div ng-click="toggle(3, 9)" class="cell" ng-class="{alive: gol.isCellAlive(3, 9)}" ng-style="{top: '40px', left: '160px'}"></div>
-			<div ng-click="toggle(3, 10)" class="cell" ng-class="{alive: gol.isCellAlive(3, 10)}" ng-style="{top: '40px', left: '180px'}"></div>
-
-			<div ng-click="toggle(4, 1)" class="cell" ng-class="{alive: gol.isCellAlive(4, 1)}" ng-style="{top: '60px', left: '0px'}"></div>
-			<div ng-click="toggle(4, 2)" class="cell" ng-class="{alive: gol.isCellAlive(4, 2)}" ng-style="{top: '60px', left: '20px'}"></div>
-			<div ng-click="toggle(4, 3)" class="cell" ng-class="{alive: gol.isCellAlive(4, 3)}" ng-style="{top: '60px', left: '40px'}"></div>
-			<div ng-click="toggle(4, 4)" class="cell" ng-class="{alive: gol.isCellAlive(4, 4)}" ng-style="{top: '60px', left: '60px'}"></div>
-			<div ng-click="toggle(4, 5)" class="cell" ng-class="{alive: gol.isCellAlive(4, 5)}" ng-style="{top: '60px', left: '80px'}"></div>
-			<div ng-click="toggle(4, 6)" class="cell" ng-class="{alive: gol.isCellAlive(4, 6)}" ng-style="{top: '60px', left: '100px'}"></div>
-			<div ng-click="toggle(4, 7)" class="cell" ng-class="{alive: gol.isCellAlive(4, 7)}" ng-style="{top: '60px', left: '120px'}"></div>
-			<div ng-click="toggle(4, 8)" class="cell" ng-class="{alive: gol.isCellAlive(4, 8)}" ng-style="{top: '60px', left: '140px'}"></div>
-			<div ng-click="toggle(4, 9)" class="cell" ng-class="{alive: gol.isCellAlive(4, 9)}" ng-style="{top: '60px', left: '160px'}"></div>
-			<div ng-click="toggle(4, 10)" class="cell" ng-class="{alive: gol.isCellAlive(4, 10)}" ng-style="{top: '60px', left: '180px'}"></div>
-
-			<div ng-click="toggle(5, 1)" class="cell" ng-class="{alive: gol.isCellAlive(5, 1)}" ng-style="{top: '80px', left: '0px'}"></div>
-			<div ng-click="toggle(5, 2)" class="cell" ng-class="{alive: gol.isCellAlive(5, 2)}" ng-style="{top: '80px', left: '20px'}"></div>
-			<div ng-click="toggle(5, 3)" class="cell" ng-class="{alive: gol.isCellAlive(5, 3)}" ng-style="{top: '80px', left: '40px'}"></div>
-			<div ng-click="toggle(5, 4)" class="cell" ng-class="{alive: gol.isCellAlive(5, 4)}" ng-style="{top: '80px', left: '60px'}"></div>
-			<div ng-click="toggle(5, 5)" class="cell" ng-class="{alive: gol.isCellAlive(5, 5)}" ng-style="{top: '80px', left: '80px'}"></div>
-			<div ng-click="toggle(5, 6)" class="cell" ng-class="{alive: gol.isCellAlive(5, 6)}" ng-style="{top: '80px', left: '100px'}"></div>
-			<div ng-click="toggle(5, 7)" class="cell" ng-class="{alive: gol.isCellAlive(5, 7)}" ng-style="{top: '80px', left: '120px'}"></div>
-			<div ng-click="toggle(5, 8)" class="cell" ng-class="{alive: gol.isCellAlive(5, 8)}" ng-style="{top: '80px', left: '140px'}"></div>
-			<div ng-click="toggle(5, 9)" class="cell" ng-class="{alive: gol.isCellAlive(5, 9)}" ng-style="{top: '80px', left: '160px'}"></div>
-			<div ng-click="toggle(5, 10)" class="cell" ng-class="{alive: gol.isCellAlive(5, 10)}" ng-style="{top: '80px', left: '180px'}"></div>
-
-			<div ng-click="toggle(6, 1)" class="cell" ng-class="{alive: gol.isCellAlive(6, 1)}" ng-style="{top: '100px', left: '0px'}"></div>
-			<div ng-click="toggle(6, 2)" class="cell" ng-class="{alive: gol.isCellAlive(6, 2)}" ng-style="{top: '100px', left: '20px'}"></div>
-			<div ng-click="toggle(6, 3)" class="cell" ng-class="{alive: gol.isCellAlive(6, 3)}" ng-style="{top: '100px', left: '40px'}"></div>
-			<div ng-click="toggle(6, 4)" class="cell" ng-class="{alive: gol.isCellAlive(6, 4)}" ng-style="{top: '100px', left: '60px'}"></div>
-			<div ng-click="toggle(6, 5)" class="cell" ng-class="{alive: gol.isCellAlive(6, 5)}" ng-style="{top: '100px', left: '80px'}"></div>
-			<div ng-click="toggle(6, 6)" class="cell" ng-class="{alive: gol.isCellAlive(6, 6)}" ng-style="{top: '100px', left: '100px'}"></div>
-			<div ng-click="toggle(6, 7)" class="cell" ng-class="{alive: gol.isCellAlive(6, 7)}" ng-style="{top: '100px', left: '120px'}"></div>
-			<div ng-click="toggle(6, 8)" class="cell" ng-class="{alive: gol.isCellAlive(6, 8)}" ng-style="{top: '100px', left: '140px'}"></div>
-			<div ng-click="toggle(6, 9)" class="cell" ng-class="{alive: gol.isCellAlive(6, 9)}" ng-style="{top: '100px', left: '160px'}"></div>
-			<div ng-click="toggle(6, 10)" class="cell" ng-class="{alive: gol.isCellAlive(6, 10)}" ng-style="{top: '100px', left: '180px'}"></div>
-
-			<div ng-click="toggle(7, 1)" class="cell" ng-class="{alive: gol.isCellAlive(7, 1)}" ng-style="{top: '120px', left: '0px'}"></div>
-			<div ng-click="toggle(7, 2)" class="cell" ng-class="{alive: gol.isCellAlive(7, 2)}" ng-style="{top: '120px', left: '20px'}"></div>
-			<div ng-click="toggle(7, 3)" class="cell" ng-class="{alive: gol.isCellAlive(7, 3)}" ng-style="{top: '120px', left: '40px'}"></div>
-			<div ng-click="toggle(7, 4)" class="cell" ng-class="{alive: gol.isCellAlive(7, 4)}" ng-style="{top: '120px', left: '60px'}"></div>
-			<div ng-click="toggle(7, 5)" class="cell" ng-class="{alive: gol.isCellAlive(7, 5)}" ng-style="{top: '120px', left: '80px'}"></div>
-			<div ng-click="toggle(7, 6)" class="cell" ng-class="{alive: gol.isCellAlive(7, 6)}" ng-style="{top: '120px', left: '100px'}"></div>
-			<div ng-click="toggle(7, 7)" class="cell" ng-class="{alive: gol.isCellAlive(7, 7)}" ng-style="{top: '120px', left: '120px'}"></div>
-			<div ng-click="toggle(7, 8)" class="cell" ng-class="{alive: gol.isCellAlive(7, 8)}" ng-style="{top: '120px', left: '140px'}"></div>
-			<div ng-click="toggle(7, 9)" class="cell" ng-class="{alive: gol.isCellAlive(7, 9)}" ng-style="{top: '120px', left: '160px'}"></div>
-			<div ng-click="toggle(7, 10)" class="cell" ng-class="{alive: gol.isCellAlive(7, 10)}" ng-style="{top: '120px', left: '180px'}"></div>
-
-			<div ng-click="toggle(8, 1)" class="cell" ng-class="{alive: gol.isCellAlive(8, 1)}" ng-style="{top: '140px', left: '0px'}"></div>
-			<div ng-click="toggle(8, 2)" class="cell" ng-class="{alive: gol.isCellAlive(8, 2)}" ng-style="{top: '140px', left: '20px'}"></div>
-			<div ng-click="toggle(8, 3)" class="cell" ng-class="{alive: gol.isCellAlive(8, 3)}" ng-style="{top: '140px', left: '40px'}"></div>
-			<div ng-click="toggle(8, 4)" class="cell" ng-class="{alive: gol.isCellAlive(8, 4)}" ng-style="{top: '140px', left: '60px'}"></div>
-			<div ng-click="toggle(8, 5)" class="cell" ng-class="{alive: gol.isCellAlive(8, 5)}" ng-style="{top: '140px', left: '80px'}"></div>
-			<div ng-click="toggle(8, 6)" class="cell" ng-class="{alive: gol.isCellAlive(8, 6)}" ng-style="{top: '140px', left: '100px'}"></div>
-			<div ng-click="toggle(8, 7)" class="cell" ng-class="{alive: gol.isCellAlive(8, 7)}" ng-style="{top: '140px', left: '120px'}"></div>
-			<div ng-click="toggle(8, 8)" class="cell" ng-class="{alive: gol.isCellAlive(8, 8)}" ng-style="{top: '140px', left: '140px'}"></div>
-			<div ng-click="toggle(8, 9)" class="cell" ng-class="{alive: gol.isCellAlive(8, 9)}" ng-style="{top: '140px', left: '160px'}"></div>
-			<div ng-click="toggle(8, 10)" class="cell" ng-class="{alive: gol.isCellAlive(8, 10)}" ng-style="{top: '140px', left: '180px'}"></div>
-
-			<div ng-click="toggle(9, 1)" class="cell" ng-class="{alive: gol.isCellAlive(9, 1)}" ng-style="{top: '160px', left: '0px'}"></div>
-			<div ng-click="toggle(9, 2)" class="cell" ng-class="{alive: gol.isCellAlive(9, 2)}" ng-style="{top: '160px', left: '20px'}"></div>
-			<div ng-click="toggle(9, 3)" class="cell" ng-class="{alive: gol.isCellAlive(9, 3)}" ng-style="{top: '160px', left: '40px'}"></div>
-			<div ng-click="toggle(9, 4)" class="cell" ng-class="{alive: gol.isCellAlive(9, 4)}" ng-style="{top: '160px', left: '60px'}"></div>
-			<div ng-click="toggle(9, 5)" class="cell" ng-class="{alive: gol.isCellAlive(9, 5)}" ng-style="{top: '160px', left: '80px'}"></div>
-			<div ng-click="toggle(9, 6)" class="cell" ng-class="{alive: gol.isCellAlive(9, 6)}" ng-style="{top: '160px', left: '100px'}"></div>
-			<div ng-click="toggle(9, 7)" class="cell" ng-class="{alive: gol.isCellAlive(9, 7)}" ng-style="{top: '160px', left: '120px'}"></div>
-			<div ng-click="toggle(9, 8)" class="cell" ng-class="{alive: gol.isCellAlive(9, 8)}" ng-style="{top: '160px', left: '140px'}"></div>
-			<div ng-click="toggle(9, 9)" class="cell" ng-class="{alive: gol.isCellAlive(9, 9)}" ng-style="{top: '160px', left: '160px'}"></div>
-			<div ng-click="toggle(9, 10)" class="cell" ng-class="{alive: gol.isCellAlive(9, 10)}" ng-style="{top: '160px', left: '180px'}"></div>
-
-			<div ng-click="toggle(10, 1)" class="cell" ng-class="{alive: gol.isCellAlive(10, 1)}" ng-style="{top: '180px', left: '0px'}"></div>
-			<div ng-click="toggle(10, 2)" class="cell" ng-class="{alive: gol.isCellAlive(10, 2)}" ng-style="{top: '180px', left: '20px'}"></div>
-			<div ng-click="toggle(10, 3)" class="cell" ng-class="{alive: gol.isCellAlive(10, 3)}" ng-style="{top: '180px', left: '40px'}"></div>
-			<div ng-click="toggle(10, 4)" class="cell" ng-class="{alive: gol.isCellAlive(10, 4)}" ng-style="{top: '180px', left: '60px'}"></div>
-			<div ng-click="toggle(10, 5)" class="cell" ng-class="{alive: gol.isCellAlive(10, 5)}" ng-style="{top: '180px', left: '80px'}"></div>
-			<div ng-click="toggle(10, 6)" class="cell" ng-class="{alive: gol.isCellAlive(10, 6)}" ng-style="{top: '180px', left: '100px'}"></div>
-			<div ng-click="toggle(10, 7)" class="cell" ng-class="{alive: gol.isCellAlive(10, 7)}" ng-style="{top: '180px', left: '120px'}"></div>
-			<div ng-click="toggle(10, 8)" class="cell" ng-class="{alive: gol.isCellAlive(10, 8)}" ng-style="{top: '180px', left: '140px'}"></div>
-			<div ng-click="toggle(10, 9)" class="cell" ng-class="{alive: gol.isCellAlive(10, 9)}" ng-style="{top: '180px', left: '160px'}"></div>
-			<div ng-click="toggle(10, 10)" class="cell" ng-class="{alive: gol.isCellAlive(10, 10)}" ng-style="{top: '180px', left: '180px'}"></div>
+		<div class='grid' ng-click="toggle($event)">
+			<div
+				ng-repeat="cell in gol.isAlive"
+				ng-click1="gol.toggleCellState(cell.row, cell.column)"
+				class="cell"
+				ng-class="{alive: cell.isAlive}"
+				ng-style="{top: 20*cell.row + 'px', left: 20*cell.column + 'px'}"
+			/>
 		</div>
-	<button class='tick' ng-click="tick()">tick</button>
 	</div>
+	<button class='tick' ng-click="gol.tick()">tick</button>
 </div>

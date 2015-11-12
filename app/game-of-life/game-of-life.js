@@ -7,6 +7,7 @@ SAMURAIPRINCIPLE.GameOfLife = function () {
 		cellKey = function (row, column) {
 			return row + '_' + column;
 		};
+	this.isAlive = isAlive;
 	this.isCellAlive = function (row, column) {
 		return isAlive[cellKey(row, column)] || false;
 	};
@@ -17,7 +18,11 @@ SAMURAIPRINCIPLE.GameOfLife = function () {
 			delete isAlive[key];
 		} else {
 			this.dispatchEvent('cellStateChanged', row, column, true);
-			isAlive[key] = true;
+			isAlive[key] = {
+				row: row,
+				column: column,
+				isAlive: true
+			};
 		}
 		return this;
 	};
