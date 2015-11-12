@@ -4,7 +4,7 @@ angular.module('MyApp')
     $stateProvider
       .state('gameOfLife', {
         url: '/game-of-life',
-        template: '<game-of-life></game-of-life>',
+        template: '<game-of-life></game-of-life><game-of-life></game-of-life>',
       });
   }])
   .service('gameOfLifeService', function () {
@@ -36,7 +36,7 @@ angular.module('MyApp')
   		for (key in isAlive) {
   			parts = key.split('_');
   			row = parseInt(parts[0], 10);
-  			column = parseInt(parts[1], 10);
+  			column = parseInt(parts[1], 10)
   			numberOfNeighbours[key] = numberOfNeighbours[key] || 0;
   			[[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]].forEach(function (offset) {
   				neighbourKey = cellKey(row + offset[0], column + offset[1]);
