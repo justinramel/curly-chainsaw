@@ -4,7 +4,6 @@
 		<div class='grid' ng-click="toggle($event)">
 			<div
 				ng-repeat="cell in gol.isAlive"
-				ng-click1="gol.toggleCellState(cell.row, cell.column)"
 				class="cell"
 				ng-class="{alive: cell.isAlive}"
 				ng-style="{top: 20*cell.row + 'px', left: 20*cell.column + 'px'}"
