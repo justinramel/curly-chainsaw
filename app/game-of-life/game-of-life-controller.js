@@ -8,7 +8,7 @@ angular.module('MyApp')
         controller: 'GameOfLifeController'
       });
   }])
-  .controller('GameOfLifeController', ['$scope', function ($scope) {
+  .controller('GameOfLifeController', ['$scope', '$interval', function ($scope, $interval) {
     'use strict';
     $scope.gol = new SAMURAIPRINCIPLE.GameOfLife();
 
@@ -19,5 +19,12 @@ angular.module('MyApp')
       console.log(event.offsetY, event.offsetX);
       console.log(row, col);
       console.log(event);
+    };
+
+    $scope.autoTick = function() {
+      $interval(function() {
+        $scope.gol.tick();
+        console.log('tick');
+      }, 300);
     }
   }]);
