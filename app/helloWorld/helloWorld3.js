@@ -12,10 +12,30 @@ angular.module('MyApp')
     'use strict';
     return $resource('/assets/data/leaderboard.json');
   })
-  .controller('HelloWorld3Controller', ['$scope', 'leaderboard', function ($scope, leaderboard) {
+  .factory('players', function ($resource) {
     'use strict';
-    leaderboard.query().$promise
-      .then(function (leaderboard) {
-        $scope.leaderboard = leaderboard;
+    return $resource('/assets/data/players/:id.json');
+  })
+  .controller('HelloWorld3Controller', ['$scope', 'leaderboard', 'players', '$q', function ($scope, leaderboard, players, $q) {
+    'use strict';
+
+    var fetchLeaderboard = function() {
+      return leaderboard.query().$promise;
+    };
+    var fetchPlayer = function(id) {
+      return players.get({id: id}).$promise.then(function(player) {
+        return {id: id, name: player.name};
       });
+    };
+
+    fetchLeaderboard().then(function(leaderboard) {
+      $scope.leaderboard = leaderboard;
+      return leaderboard.map(function(l) {
+        return fetchPlayer(l.id);
+      });
+    }).then(function(players) {
+      return $q.all(players);
+    }).then(function(players) {
+      $scope.players = players;
+    });
   }]);
